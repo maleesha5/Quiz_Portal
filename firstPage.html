@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="">
+
+<head>
+    <title>1st Angular App</title>
+</head>
+
+<body data-ng-init="persons=[{name:'Maleesha Wijeratne', city:'colombo'}, {name:'John Snow', city:'Kandy'}]">
+    <script src="angular.min.js"></script>
+
+    name:
+    <br>
+    <input type="text" data-ng-model="name" />
+
+    <ul>
+        <li data-ng-repeat="personModels in  persons | filter:name | orderBy:city">{{personModels.name | uppercase}} - {{personModels.city}}</li>
+    </ul>
+    <script>
+        var demoApp = angular.moduel('demoApp', [])
+
+        function simpleController($scope) {
+            persons = [{
+                name: 'Maleesha Wijeratne',
+                city: 'colombo'
+            }, {
+                name: 'John Snow',
+                city: 'Kandy'
+            }, {
+                name: 'Danaerys',
+                city: 'Targaryan'
+            }]
+
+        }
+    </script>
+</body>
+
+</html>
